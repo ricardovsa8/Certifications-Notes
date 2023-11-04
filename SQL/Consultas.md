@@ -95,8 +95,38 @@ select  sum(monto)as suma_ventas, strftime ('%m',fecha_venta)as mes from ventas 
 select correo,count (correo) as repeticiones from usuarios group by 1 order by 1
 select correo, materia,avg(nota) as promedio_notas from estudiantes group by 1,2
 ```
+Having
 ```
+select strftime('%m',FECHA_INSCRIPCION) as mes, count (FECHA_INSCRIPCION) as cantidad_usuarios
+from inscripciones
+group by strftime('%m',FECHA_INSCRIPCION)
+having cantidad_usuarios=1
+
+select correo, count (correo) as cuenta_correos from correos_corporativos group by correo having cuenta_correos>1
+select count(nombre) as cantidad_de_usuarios, departamento from empleados group by departamento having cantidad_de_usuarios>1
+select email,avg (notas) as promedio_notas from notas group by email having promedio_notas >=50
 ```
+El orden de las clausulas en una consulta debe ser el siguiente:
+ORDEN	CLAUSULA	DESCRIPCIÓN
+1	SELECT	Especifica las columnas que se deben retornar en el resultado.
+2	FROM	Especifica las tablas de las cuales se extraerán los datos.
+3	WHERE	Filtra registros antes de cualquier agregación o agrupación.
+4	GROUP BY	Agrupa registros por una o más columnas.
+5	HAVING	Filtra registros después de la agregación.
+6	ORDER BY	Ordena los registros retornados por una o más columnas.
+7	LIMIT	Limita el número de registros retornados.
 ```
+Select producto,  sum (cantidad) as cantidad_total from ventas 
+group by producto 
+having cantidad_total >1000
+order by cantidad_total desc
+
+select  departamento, avg(salario) as salario_promedio from empleados 
+group by departamento 
+having salario_promedio >3000 
+order by salario_promedio desc
 ```
+Subconsultas
+```
+
 ```
