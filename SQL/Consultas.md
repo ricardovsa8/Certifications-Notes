@@ -128,5 +128,83 @@ order by salario_promedio desc
 ```
 Subconsultas
 ```
+select * from empleados where sueldo <= (select  avg(sueldo)from empleados)
+select * from empleados where sueldo > ( select  avg(sueldo)from empleados where departamento = 'Finanzas')
+select * from empleados where sueldo >(select max(sueldo) from empleados where departamento='Finanzas')
+select * from notas where notas>(select avg(notas) from notas group by email)
 
+select nombre from estudiantes where ESTUDIANTE_ID in
+(select ESTUDIANTE_ID from promedios where promedio_notas >50)
+
+select nombre as nombres_seleccionados from libros  where LIBRO_ID in 
+(select LIBRO_ID from valoraciones where valoracion_promedio >4)
+
+select nombre as nombres_pacientes from pacientes where paciente_id in
+(select paciente_id from consultas where fecha_consulta < '2023-05-16')
+
+SELECT AVG(total_venta) as promedio_ventas
+FROM (
+    SELECT empleado_id, SUM(monto) as total_venta
+    FROM ventas
+    GROUP BY empleado_id
+)
+
+SELECT AVG(goles) as promedio_goles
+FROM (
+    SELECT  SUM(goles) as goles
+    FROM goles 
+    GROUP BY nombre
+)
+```
+Combinación de consultas
+```
+SELECT nombre as nombres FROM Estudiantes UNION  SELECT nombre FROM Profesores;
+select email as correos_unicos from usuarios union select email from clientes
+select * from empleados1 union all select * from empleados2
+SELECT cliente FROM lista1 INTERSECT SELECT cliente FROM lista2
+SELECT nombre FROM empleados EXCEPT SELECT nombre FROM gerentes;
+```
+Inserción de registros
+```
+insert into usuarios (id,nombre,apellido,email,telefono) values (7,'Lucía','Sánchez','luciasanchez@outlook.com','555-5555')
+CREATE TABLE empleados (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT,apellido TEXT);
+INSERT INTO empleados (nombre, apellido) VALUES ('Jane', 'Smith');
+INSERT INTO usuarios (nombre, apellido,email) VALUES ('Lucía', 'Sánchez','luciasanchez@outlook.com');
+INSERT INTO usuarios (nombre, apellido,email,telefono) VALUES ('Lucía', 'Sánchez','luciasanchez@outlook.com','111-1111');
+
+```
+Borrado y modificación de registros
+```
+delete from productos - Borrar todos los registros de una tabla
+delete from usuarios where id=2
+update usuarios set telefono='123-45678'
+update usuarios set telefono= '123-456' where apellido='López'
+```
+Consultas en múltiples tablas
+```
+SELECT * FROM usuarios JOIN notas ON email1 = email2
+SELECT * FROM usuarios JOIN notas ON usuarios.email = notas.email
+SELECT usuarios.*, notas.notas FROM usuarios JOIN notas  ON usuarios.email = notas.email
+SELECT usuarios.*, datos_contacto.* FROM usuarios JOIN datos_contacto  ON usuarios.email = datos_contacto.email
+```
+Cuando queremos utilizar joins con las otras claúsulas que hemos aprendido, tenemos que considerar el orden de estas. En la siguiente tabla se muestra el orden que debemos seguir:
+COMANDO	SE LEE COMO:
+SELECT	Selecciona estos datos.
+FROM	De esta tabla.
+JOIN	Unelos con esta tabla.
+WHERE	Filtra los valores que cumplan tal condición.
+GROUP BY	Agrupa los resultados por este criterio.
+HAVING	Filtra por estos criterios agrupados.
+ORDER BY	Ordena los resultados por este otro criterio.
+LIMIT	Limita los resultados a esta cantidad.
+```
+SELECT usuarios.*, notas.* FROM usuarios JOIN notas  ON usuarios.email = notas.email where usuarios.email='juan.perez@example.com'
+SELECT p.Nombre , SUM(v.Cantidad) AS total_vendido FROM Productos p JOIN Ventas v ON v.ProductoID = p.ProductoID GROUP BY p.ProductoID ORDER BY total_vendido DESC LIMIT 1; 
+```
+Tipos de join
+```
+SELECT * FROM usuarios INNER JOIN notas ON usuarios.email = notas.email
+SELECT * FROM empleados  LEFT JOIN departamentos ON empleados .EMAIL = departamentos.EMAIL
+SELECT * FROM empleados  RIGHT  JOIN departamentos ON empleados .EMAIL = departamentos.EMAIL
+SELECT productos.* ,precios.* FROM productos  left  JOIN precios ON productos.producto_id = precios.producto_id;
 ```
