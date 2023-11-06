@@ -37,3 +37,37 @@ No Repudio
 - La persona no puede negar que envió porque el destinatario tiene prueba
 - Ejm. Realizar una compra mediante una tarjeta de credito.
  
+**Modulo 2: Comprender el proceso de control de gestión de riesgo**
+
+Riesgo: Es la medida en que una entidad esta amenazada.
+
+Vulnerabilidad: Es una brecha o debilidad en la protección de una organización de sus activos valiosos.
+
+Amenazas: Es algo o alguien que pretende explotar una vulnerabilidad para obetner acceso no autorizado.
+
+Activo: Es algo que necesita protección.
+
+Vector de amenazas: Los medios por los cuales un actor de amenazas lleva a cabo sus objetivos.
+
+Impacto: magnitud de daño.
+
+Identificación de riesgo:
+
+  - Identificar el riesgo para comunicarlo claramente.
+  - Los empleados de todos los niveles de la organizacion son responsables de indetificar los riesgos.
+  - Identificar el riesgo para protegerse contra él.
+
+Evaluación de riesgo:
+
+  - Este se documenta}
+  - Se define como el proceso de identificar, estimar y priorizar.
+
+Tratamiento de riesgo:
+
+  - Se relaciona con la toma de decisiones sobre las mejores acciones a tomar con respecto al riesgo identificado.
+    - Evitación: Eliminar el riesgo por completo
+    - Aceptación: No tomar ninguna accipon para reducir la probabilidad de que ocurar un riesgo, el impacto es insignificante.
+    - Mitigación: Tipo más comun, incluye la adoptación de medidas para prevenir.
+    - Transferir: Pasar el riesgo a otra parte, poliza de seguro.
+  
+**Modulo 3: Comprender los controles de seguridad**
