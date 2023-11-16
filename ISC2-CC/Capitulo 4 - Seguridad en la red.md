@@ -228,3 +228,72 @@ Diferencia de un MOU o MOA y el SLA, es que el MOU esta más directamente relaci
 
 CSP - Proveedor de servicios en la nube
 
+*Caracteristicas de la nube*
+- El uso se mide y se cotiza según las unidades consumidas.
+- Reducción del costo de propiedad.
+- Reducción de los costos de energia y enfriamiento.
+- Permite a la empresa escalar software.
+
+*Modelo de servicio*
+- SaaS -> Software como servicio.
+- PaaS -> Plataforma como servicio.
+- IaaS -> Infraestructura como servicio.
+
+*Modelo de implementación*
+- Publico
+- Privado
+- Hibrido
+- Comunitario
+
+MSP - Proveedor de servicios gestionados
+
+Es una empresa que gestiona activos de tecnologia de la información por otra empresa.
+
+SLA - Acuerdo de nivel de servicio
+
+Entre el proveedor y el cliente.
+
+*Diseño de Red*
+
+Satisfacer los requisitos de comunicación de datos y dar como resultado un redimiento general efeciente.
+
+*Elementos que se tiene en cuenta (Al momento de diseñar una red)*
+- Segmentación de red: implica controlar el trafico entre los dispositivos de red.
+- Zona Desmilitarizada (DMZ): red diseñada para que accedan visitantes externos.
+- Red area local virtual (VLAN)
+- Red privada virtual (VPN)
+- Defenza de profundidad (protección mediante capas)
+- Control de acceso a la red (NAC - politicas de seguridad)
+
+*Defenza en profundidad*
+
+Utiliza un enfoque en capas al diseñar la postura de seguridad de una organización
+
+*Confianza cero*
+
+Suelen ser redes microsegmentadas con contafuegos en casi todos los puntos de conexión.
+
+*Control de acceso a la red - NAC*
+
+Conocer y controlar el acceso a él, tanto para personas internar y externas.
+
+*Segmentación de red (DMZ)*
+
+Forma efectiva de lograr una defenza en profundida para aplicaciones distribuidas o varios niveles
+
+*Segmentación para sistemas embedidas e IoT*
+
+Es una computadora implementada como parte de un sistema más grande.
+
+*Micro Segmentación*
+
+Reglas que se aplican a maquinas y/o usuarios individuales, estas reglas deben ser tan detalladas y complejas.
+VPN (Redes privadas virtuales)
+
+*Red de area local virtual (VLAN)*
+
+Separaciones virtuales dentro de un conmutador y se utulizan principalmente para limitar el trafico de difusión.
+
+*Red privada virtualizada (VPN)*
+
+Conexión de punto a punto entre dos host.
