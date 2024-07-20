@@ -20,16 +20,48 @@ comando [opciones] [argumentos]
 -----
 Listar archivos y direcctorios
 
-ls
+$ ls
 
 ------
 Listar archivos con detalles
 
-ls -l
+$ ls -l
 
 ------
 Listar archivos mostrando el tamaño de los archivos
-ls -l -h   
-ls -lh
+
+$ ls -l -h   
+$ ls -lh
 
 ------
+Ver fecha
+
+$ date
+
+------
+Ver historial de consultas
+
+$ history
+
+------
+Muestra los ultimos 5 comando de la lista del historial
+
+$ history 5
+
+------
+Ejecuta el ultimo comando otra vez
+
+!!
+
+------
+Ejecuta el quinto comando desde la parte inferior de la lista de historial
+
+!-5
+
+------
+Ejecuta el comando ls más reciente
+
+!ls
+
+------
+
