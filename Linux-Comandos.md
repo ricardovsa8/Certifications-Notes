@@ -64,4 +64,102 @@ Ejecuta el comando ls más reciente
 !ls
 
 ------
+Declarar variable y mostrar
+
+$ VARIABLE=499999
+$ echo #VARIABLE
+
+-----
+Crear una variable local
+
+$ variable1='Something'
+
+-----
+Buscar una variable de entorno
+
+$ env | grep variable1 
+
+-----
+Exportar una varible local a una variable de entorno
+
+$ export variable1
+
+-----
+Crear una variable de entorno
+
+$ export variable2='Else'
+
+-----
+Eliminar una variable exportada
+
+$ unset variable2
+
+-----
+Buscar la ubicación de un comando en la variable PATH
+
+$ which date
+
+----
+Determinar información acerca de un comando
+
+sysadmin@localhost:~$ type which                                       
+which is hashed (/usr/bin/which)
+
+-----
+mostrará todos los archivos que contienen al menos un número:
+
+$ echo /etc/*[0-9]*
+
+-----
+mostrará todos los archivos que comiencen con cualquier letra entre e incluyendo a y d
+
+$ echo /etc/[a-d]*
+
+-----
+imprimirá cualquier archivo que comienza con el carácter g o u y contiene cero o más caracteres adicionales
+
+$ echo /etc/[gu]*   
+
+-----
+mostrará cualquier archivo que no comienza con D o P
+
+$echo [!DP]*
+
+-----
+Traer la fecha de hoy
+
+$ echo Today is `date`
+
+-----
+imprimir los meses de enero, febrero y marzo de 2015,
+
+$ cal 1 2015; cal 2 2015; cal 3 2015
+
+-----
+Obtener información del sistema actual
+
+$ uname
+
+-----
+mostrará el nombre del host del nodo de la red
+
+$ uname --nodename
+
+-----
+Mostrar ubicación actual
+
+$ pwd
+
+-----
+mostrarán todos los archivos en el directorio actual que comienzan con la letra D y la letra P
+
+$ echo P*
+$ echo D*
+
+-----
+mostrará todos los archivos en tu directorio actual que terminan en la letra s
+
+$ echo *s
+
+-----
 
