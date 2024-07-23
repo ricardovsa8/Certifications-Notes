@@ -234,4 +234,135 @@ Limitar la salida
 $ locate -b "\passwd"
 
 -----
+Para ver el sistema de archivos raiz
 
+$ ls /
+
+------
+Rutas
+
+usr
+Share
+gnome, doc, sounds
+
+-----
+Ver direcctorio actual
+
+$ pwd
+
+-----
+Una ruta de acceso relativa proporciona direcciones usando tu ubicación actual como un punto de referencia. 
+Recuerda que esto es diferente de las rutas absolutas, que siempre requieren que utilices el directorio raíz como punto de referencia.
+
+------
+Lista de archivos
+
+$ ls
+
+-----
+Mostrar lista de archivos, incluyendo archivos ocultos
+
+$ ls -a
+
+-----
+Detalles de un archivo
+
+$ ls -l
+
+-----
+Tipo de archivo
+Permisos
+Conteo de enlaces fisicos
+Usuario propietario
+Grupo propietario
+Tamaño de archivo
+Hora de modificacion
+Nombre de archivo o directorio
+
+-----
+Saber el tamaño de archivo en megabytes o gigabytes
+
+$ ls -lh /usr/bin/omshell
+
+-----
+Saber el direcctorio actual
+
+$ ls -d
+$ ls -ld
+
+-----
+Listar de manera recursiva
+
+$ ls -R /etc/ppp
+
+-----
+Ordenar archivos por tamaño
+
+$ ls -S /etc/ssh
+
+-----
+Ordenar archivos por momento que se modificaron
+
+$ ls -t
+
+------
+Orbtener información detalla de la hora
+
+$ ls -t --full-time /etc/ssh
+
+-----
+Ordenar de manera menor a mayor
+
+$ ls -lrS /etc/ssh
+
+------
+Ordenar de manera mayor a menos
+
+$ ls -lrt /etc/ssh
+
+-----
+Copiar archivos
+
+$ cp fuente destino
+
+-----
+Mover archivos
+
+$ mv fuente destino
+
+------
+-i	Movimiento interactivo: pregunta si un archivo debe sobrescribirse.
+-n	No sobrescribir el contenido de los archivos de destino
+-v	Verbose: muestra el movimiento resultante
+
+-----
+Crear un archivo vacion
+
+$ touch ejemplo
+
+-----
+Elminar un archivo
+
+$ rm ejemplo
+
+-----
+Para eliminar varios archivos es recomendable usar -i
+
+$ rm -i *.txt
+
+-----
+Elminar un directorio
+
+$ rm -r ejemplo
+
+-----
+Elminar u directorio vacio
+
+$ rmdir ejemplo
+
+------
+Crear un directorio
+
+$ mkdir ejemplo
+
+-----
