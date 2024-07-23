@@ -162,16 +162,76 @@ mostrará todos los archivos en tu directorio actual que terminan en la letra s
 $ echo *s
 
 -----
+UNIX es un sistema operativo desde el cual se construyo la base de Linux.
+
+Las PAGINAS MAN, son documentos de ayuda
+
+-----
+Mostrar la pagina Man del comando cal
+
+$ man cal
+
+-----	
+Comandos que existen
+
+- Comando de usuario
+- Comando del sistema
+- Comando de administración
+
+-----
+Ver las paginas en la se encuentra un comando (Opción 1)
+
+$ man -f passwd
+
+-----
+Ver las paginas en la se encuentra un comando (Opción 2)
+
+$ whatis passwd
+
+-----
+Buscar paginas man por una palabra clave (Opción 1)
+
+$ man -k passwd
+
+-----
+Buscar paginas man por una palabra clave (Opción 2)
+
+$ apropos passwd
+
+-----
+Obtener información de un comando
+
+$ info ls
+
+-----
+Otras forma de ayuda
+
+$ ls --help
+
+-----
+Ver la ubicación de un comando
+
+$ whereis ls
+
+-----
+Encontrar cualquier archivo o directorio
+
+$ locate gshadow
+
+-----
+Actualizar manualmente la base de datos locate
+
+$ updatedb
+
+------
+Contar los numero de archivos
+
+$ locate -c passwd
+
+-----
+Limitar la salida
+
+$ locate -b "\passwd"
 
 -----
 
------
-
------
-
------
-
------
-
-
------
