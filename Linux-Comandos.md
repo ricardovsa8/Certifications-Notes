@@ -438,3 +438,174 @@ Para extraer el archivo zip, utiliza el comando unzip sin ninguna opción
 unzip udev.zip
 
 -----
+El carácter barra vertical puede utilizarse para enviar la salida de un comando a otro.
+
+-----
+Mostrar las 10 primeras lineas
+
+$ head /etc/sysctl.conf
+
+-----
+Mostrar las 10 ultimas lineas
+
+$ tail /etc/sysctl.conf
+
+-----
+Ver algunos archivos del directorio
+
+$ ls /etc | head
+
+-----
+Comando para enumeras datos obtenidos
+
+$ ls -l /etc/ppp | nl
+
+----
+Mostrar los ultimos 5 lineas de salida
+
+$ ls -l /etc/ppp | n1 |  tail -5
+
+--ado ---
+STDIN es la información normalmente introducida por el usuario mediante el teclado.
+
+-----
+STDOUT es la información que muestra cuando se ejecuta un comando.
+
+-----
+STDERR son mensajes de error que muestra en pantalla cuando se ejecuta un comando.
+
+-----
+Redirigir un STDOUT a un archivo txt
+
+$ echo "line 1" > ejemplo.txt
+
+-----
+Para agregrar otro resultado al archivo tct
+
+$ echo "nota 2" >> ejemplo.txt
+
+------
+Ver el archivo txt
+
+$ cat archivo.txt
+
+------
+Guardar en un archivo resultado STDOUT y STDERR
+
+$ ls /fake /etc/ppp > example.txt 2> error.txt
+
+-----
+La sintaxis del comando find es:
+
+find [directorio de inicio] [opción de búsqueda] [criterio de búsqueda] [opción de resultado]
+
+-----
+Buscar y dirigir los resultados a un archivos txt
+
+$ find /etc -name hosts 2> errors.txt 
+
+-----
+Donde se envia los archivos innecesarios
+
+$ find /etc -name hosts 2> /dev/null
+
+-----
+Buscar archivos por tamaño
+
+$ find /etc -size 10c -ls 2>/dev/null 
+
+------
+Buscar archivos que sea mayor a 100 megabytes
+
+$ find /usr -size +100M -ls 2> /dev/null
+
+-----
+Buscar archivos que sea menor a 100 megabytes
+
+$ find /usr -size -100M -ls 2> /dev/null
+
+-----
+Muestra todos los archivos en la estructura de directorio /etc con el tamaño de 10 bytes y que son archivos simples:
+
+$ find /etc -size 10c -type f -ls 2>/dev/null
+
+------
+muestra la línea #22 hasta el final de la salida del comando nl
+
+$ nl /etc/passwd | tail -n +22
+
+------
+Ordenar datos de un archivo
+
+$ sort mypasswd
+
+------
+Ver estadisticar de un archivo
+
+$ wc /etc/passwd /etc/passwd-
+
+-l para mostrar sólo el número de líneas
+-w para mostrar sólo el número de palabras
+-c para mostrar sólo el número de bytes.
+------
+Utilizar el Comando cut para Filtrar el Contenido del Archivo
+
+$ cut -d: -f1,5-7 mypasswd
+
+-----
+tilizar el comando grep para filtrar las líneas del archivo /etc/passwd para las líneas que contengan los caracteres bash
+
+grep --color bash /etc/passwd 
+
+-----
+más bien cuántas líneas coinciden con el patrón
+
+$ grep -c bash /etc/passwd 
+
+-----
+Opción -n del comando grep muestra los números de la línea originales
+
+$ grep -n bash /etc/passwd
+
+-----
+Todas las líneas que no contengan nologin en el archivo /etc/passwd
+
+grep -v nologin /etc/passwd
+
+-----
+Lista de los archivos en el directorio /etc que contengan linux
+
+grep -l linux /etc/*
+
+-----
+Listado de las líneas de los archivos en el directorio /etc que contengan cualquier tipo de letra (mayúscula o minúscula) del patrón de caracteres linux
+
+grep -i linux /etc/*
+
+-----
+Listado de las líneas de los archivos en el directorio /etc que contengan el patrón de la palabra linux
+
+grep -w linux /etc/*
+
+-----
+Buscar tres letras en archivo txt
+
+$ gred --color 'a..' ejemplo.txt
+
+-----
+Para el inicio
+
+$ grep --color "^a" example.txt
+
+------
+Para el final
+
+$ grep "c$" example.txt  
+
+------
+Buscar un caracter especial (colocar antes el \)
+
+$ grep --color "cd\*" example.txt
+
+-----
+
