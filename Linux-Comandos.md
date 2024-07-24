@@ -608,4 +608,117 @@ Buscar un caracter especial (colocar antes el \)
 $ grep --color "cd\*" example.txt
 
 -----
+Editores
 
+nano - es un editor para pequeños archivos
+vi , vim - un editor muy potente
+
+-----
+Ejemplo de la condicion if
+
+if somecommand; then
+  # do this if somecommand has an exit code of 0
+fi
+
+-----
+Comando test como alternativa de if
+
+test –f /dev/ttyS0	0 si el archivo existe
+test ! –f /dev/ttyS0	0 si el archivo no existe
+test –d /tmp	0 si el directorio existe
+test –x `which ls`	sustituir la ubicación de ls y luego (probar) test, si el usuario puede ejecutar
+test 1 –eq 1	0 si tiene éxito la comparación numérica
+test ! 1 –eq 1	NO – 0 si la comparación falla
+test 1 –ne 1	Más fácil, ejecutar test (probar) si hay desigualdad numérica
+test “a” = “a”	0 si tiene éxito la comparación de cadenas
+test “a” != “a”	0 si las cadenas son diferentes
+test 1 –eq 1 –o 2 –eq 2	-o es OR: cualquiera de las opciones pueden ser igual
+test 1 –eq 1 –a 2 –eq 2 es AND: ambas comparaciones deben ser iguales
+
+
+-----
+La instrucción if tiene una forma final que te permite hacer varias comparaciones al mismo tiempo usando elif (abreviatura de elseif).
+
+#!/bin/bash
+
+if [ "$1" = "hello" ]; then
+  echo "hello yourself"
+elif [ "$1" = "goodbye" ]; then
+  echo "nice to have met you"
+  echo "I hope to see you again"
+else
+  echo "I didn't understand that"
+fi
+
+------
+el loop for y el loop while
+
+#!/bin/bash
+
+SERVERS="servera serverb serverc"
+for S in $SERVERS; do
+  echo "Doing something to $S"
+done
+
+---
+
+#!/bin/bash
+
+i=0
+while [ $i -lt 10 ]; do
+  echo $i
+  i=$(( $i + 1))
+done
+echo "Done counting"
+
+-----
+Para ver a que familia pertenece tu CPU (Opcion 1)
+
+$ arch
+
+-----
+Para ver a que familia pertenece tu CPU (Opcion 2)
+
+$ lscpu
+
+-----
+Para ver a que familia pertenece tu CPU (Opcion 3) más detallada
+
+$ car /proc/cpuinfo
+
+-----
+Mostar informacipión de SMBIOS
+
+$ dmidecode
+
+-----
+Ver la cantidad de RAM fisica y RAM virtual
+
+$ free -m
+
+-----
+Ver todos los dispositivos conectados por un bus PCI
+
+$ lspci
+
+-----
+Ver dispositivos de Bus Serie Universal USB
+
+$ lsusb
+
+-----
+Ver dispositios conectados
+
+$ lshal
+
+-----
+Ver los modulos cargados actualmente
+
+$ lsmod
+
+-----
+Ver los discos
+
+$ fdisk -l
+
+-----
