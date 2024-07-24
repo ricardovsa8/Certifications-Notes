@@ -366,3 +366,75 @@ Crear un directorio
 $ mkdir ejemplo
 
 -----
+gzip y gunzip. Éstos son el bzip2 y bunzip2. Las utilidades del bzip utilizan un algoritmo de compresión diferente 
+(llamado bloque de clasificación de Burrows-Wheeler frente a la codificación Lempel-Ziv que utiliza gzip) 
+que puede comprimir los archivos más pequeños que un gzip a costa de más tiempo de CPU
+
+-----
+comando tar para crear un archivo empaquetado del directorio /etc/udev. Guardar la copia de seguridad en el directorio ~/mybackups
+
+cd
+mkdir mybackups
+tar –cvf mybackups/udev.tar /etc/udev
+ls mybackups
+
+La opción -c le indica al comando tar que cree un archivo tar. La opción -v significa "verbose", que le indica al comando tar para muestre lo que está haciendo. La opción -f se utiliza para especificar el nombre del archivo tar.
+
+-----
+Muestra el contenido del archivo tar (t = lista el contenido, v = verbose, f =nombre del archivo):
+
+tar –tvf mybackups/udev.tar
+
+-----
+Para crear un archivo tar comprimido, utiliza la opción -z
+
+tar –zcvf mybackups/udev.tar.gz /etc/udev
+ls –lh mybackups
+
+Observa la diferencia de tamaño; la primera copia de seguridad (10 Kbytes) es mayor que la segunda copia de seguridad (1.2 Kbytes).
+
+La opción -z hace uso de la utilidad gzip para realizar la compresión.
+
+-----
+Extraer el contenido de un archivo. Los datos se restauran en el directorio actual por defecto:
+
+tar –xvf udev.tar.gz
+
+-----
+Para añadir un archivo a un archivo empaquetado existente, utiliza la opción -r con el comando tar. Ejecuta los siguientes comandos para realizar esta acción y comprobar la existencia del archivo nuevo en el archivo empaquetado tar:
+
+tar -rvf udev.tar /etc/hosts
+tar –tvf udev.tar
+
+-----
+gzip y gunzip para comprimir y descomprimir un archivo
+
+gzip words
+
+-----
+descomprimir el archivo words.gz
+
+gunzip words.gz
+
+-----
+Populares
+
+bzip2/bunzip2
+.bz2
+-----
+Comprime el directorio /etc/udev y su contenido con el comando de compresión zip
+
+zip -r udev.zip /etc/udev
+ls -l udev.zip
+
+-----
+Para ver el contenido de un archivo zip, utiliza la opción -l con el comando unzip
+
+unzip -l udev.zip
+
+-----
+Para extraer el archivo zip, utiliza el comando unzip sin ninguna opción
+
+unzip udev.zip
+
+-----
