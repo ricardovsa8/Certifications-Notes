@@ -722,3 +722,209 @@ Ver los discos
 $ fdisk -l
 
 -----
+Ver los procesos ejecutandose
+
+$ ps
+
+-----
+Visualizar el ring buffer del kernel
+
+$ dmesg
+
+-----
+Actualizar paquetes en debian
+
+$ sudo apt-get update
+
+-----
+Buscar repositorios de estos programas de software debian
+
+$ apt-cache
+
+-----
+Instalar solo un paquete en debian
+
+sudo apt-get install package
+
+-----
+Actualizar todos los paquetes posible en debian
+
+sudo apt-get upgrade
+
+-----
+eliminar todos los archivos de un paquete de software, excepto los archivos de configuración
+
+sudo apt-get remove package
+
+------
+eliminar todos los archivos de un paquete de software, incluyendo los archivos de configuración
+
+sudo apt-get --purge remove package
+
+------
+Listar los archivos que componen un paquete especial
+
+dpkg -L package
+
+------
+consultar un paquete y obtener información o su estado
+
+dpkg - s package
+
+------
+Buscar un paquete desde los repositorios configurados RPM
+
+yum search keyword
+
+-------
+Instalar un paquete, junto con sus dependencias RPM
+
+yum install package
+
+------
+Actualizar un paquete de software individual RPM
+
+yum update package
+
+-----
+Actualizar todos los paquetes RPM
+
+yum update
+
+------
+Eliminar paquetes RPM
+
+yum remove package
+
+-----
+
+Back-end - RPM
+Front-end - YUM
+
+------
+obtener una lista de todos los paquetes que están instalados actualmente en el sistema
+
+rpm -qa
+
+-----
+listar los archivos que componen un paquete especial
+
+rpm -ql package
+
+-----
+consultar un paquete y obtener información o su estado
+
+rpm -qi package
+
+------
+determinar si un archivo en particular fue puesto en el sistema de archivos como el resultado de la instalación de un paquete
+
+rpm -qf /path/to/file
+
+-------
+El archivo /proc/cmdline puede ser importante porque contiene toda la información que le fue pasada al kernel cuando fué iniciado.
+El archivo /proc/meminfo contiene información sobre el uso de memoria por el kernel.
+El archivo /proc/modules contiene una lista de módulos que están cargados actualmente en el kernel para agregar funcionalidad extra.
+
+------
+Ver procesos con relacion padre e hijo (Opcion 1)
+
+pstree
+
+-----
+Ver procesos con relacion padre e hijo (Opcion 2)
+
+$ ps --forest
+
+-----
+Ver los proceso del sistema
+
+$ ps aux
+
+$ ps -ef
+
+$ ps aux | head
+
+-----
+Ver sobre el proceso firefox
+
+$ ps -e | gred firefox
+
+
+-----
+Ver procesos de otro usuario
+
+# ps -u username
+
+----
+Ver los procesos en ejecucion cada periodo
+
+$ top
+
+-----
+Ver la memoria usar en ese momento
+
+$ free
+
+-----
+ver qué comandos se ejecutan en la terminal actual
+
+$ jobs
+
+-----
+Traer a primer plano
+
+$ fg %1
+
+------
+Para suspender (pausar) el proceso y recuperar el control de la terminal
+
+Ctrl-Z
+
+------
+Para que este proceso se ejecute en segundo plano
+
+$ bg %1
+
+-----
+Detener un proceso
+
+$ kill %3
+
+-----
+Detener todos los procesos, se esta ejecutando 3 procesos ping
+
+$ killall ping
+
+------
+Hacer pausa a un proceso
+
+sleep
+
+-----
+muestren todos los procesos
+
+$ ps -e
+
+-----
+Especificar las columnas de salida
+
+$ ps -o pid,tty,time,%cpu,cmd
+
+------
+Especificar las columnas de salida ordenado
+
+$ ps -o pid,tty,time,%mem,cmd --sort %mem
+
+-----
+En los sistemas de CentOS, el syslogd se llama rsyslogd
+
+-----
+Pasar a superusuario
+
+$ su - root
+
+----
+Los registros del sistema se almacenan en el directorio /var/log
+
+------
