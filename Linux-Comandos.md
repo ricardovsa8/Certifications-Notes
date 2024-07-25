@@ -928,3 +928,194 @@ $ su - root
 Los registros del sistema se almacenan en el directorio /var/log
 
 ------
+
+Limitar cuanto pinges se debe hacer
+
+ping -c 4 192.168.1.1
+
+-----
+Ver tabla de enrutamiento
+
+$ route
+
+-----
+Mas información sobre la red, estadistica de red
+
+$ netstat -i
+
+-----
+ver tabla de encutamiento con netstat
+
+netstat -r
+
+------
+Ver lo que esta escuchando o puertos
+
+netstat -tln
+
+-----
+determinar la dirección IP del host example.com
+
+dig example.com
+
+host example.com
+-----
+Conecatarse por ssh
+
+ssh bob@test 
+
+-------
+Compruebe que la dirección IP 127.0.0.1 tiene una entrada en el archivo /etc/hosts
+
+grep 127.0.0.1 /etc/hosts
+
+------
+Visualiza el archivo /etc/resolv.conf para ver si alguna de las entradas del nameserver existe
+
+cat /etc/resolv.conf
+
+----
+Información de usuario:
+
+/etc/passwd
+
+Las contraseñas se almacena en:
+
+/etc/shadow
+
+------
+ver la información de la cuenta del nombre de usuario llamado sysadmin
+
+grep sysadmin /etc/passwd
+
+------
+Ver el usuario que esta conectado
+
+$ id
+
+------
+Ver un grupo de usuarios
+
+grep mail /etc/group   --- OPCION 1
+
+getent group mail   ----OPCION 2
+
+------
+muestra una lista de usuarios que están conectados actualmente en el sistema
+
+$ who
+
+-----
+lista más detallada sobre los usuarios que actualmente están en el sistema
+
+$ w
+
+------
+recuperar información acerca de las entradas en el archivo /etc/group
+
+getent group sysadmin
+getent group adm
+
+------
+Ver grupos locales
+
+# grep root /etc/group
+
+----
+Ver grupos locales y en la red
+
+# getent group root
+
+-----
+Crear un grupo
+
+# groupadd -g 506 research
+
+-----
+Modificar un grupo, modificar le nombre 
+
+# groupmod -n nuevoname antiguoname
+
+-----
+modificar el GID
+
+# groupmod -g 10004 nuevoname
+
+-----
+Ver lista de archivos que no fueron agrupados
+
+# find / -nogroup
+
+------
+Eliminar un grupo
+
+# groupde1 nuevoname
+
+-----
+Modificar valores por defecto de useradd manipualdo el archivo /etc/deafault/useradd
+
+# useradd -D 
+
+------
+Crear un usuario
+
+# useradd -u 1000 -g users -G wheel,research -c 'Jane Doe' jane 
+
+-------
+Especificar el tamño de la contraseña
+
+El archivo /etc/login.defs permite al administrador especificar la longitud mínima de la contraseña
+
+------
+Establecer una contraseña
+
+$ passwd jade
+
+-----
+cambiar el número máximo de días para la validez de la contraseña de una persona a 60 días
+
+# chage -M 60 jane
+
+-----
+Ver opcioner del manejo de contraseña
+
+# chage
+
+-----
+Modificar una cuenta de usuario 
+
+usermod
+
+----
+Eliminiar un usuario
+
+# userdel jane
+
+-----
+Eliminar un usuario y su direcctorio
+
+# userdel -r jane
+
+-----
+Utiliza el comando usermod para agregar el grupo research como un grupo secundario para el usuario sysadmin
+
+# usermod -aG research sysadmin 
+
+-----
+verificar si el sysadmin pertenece al grupo
+
+groups sysadmin
+id sysadmin
+getent goup research
+
+----
+Crea un nuevo usuario llamado student siendo éste el miembro secundario del grupo research y miembro principal de su propio grupo privado. Utiliza un comentario de Linux Student que aparecerá como nombre completo del usuario cuando lo realizan al iniciar la sesión en un entorno gráfico. Asegúrate de que su directorio home se creará especificando la opción -m
+
+useradd  -G research -c 'Linux Student' -m student
+
+-----
+VER SI UN  USUARIO INGRESO ALGUNA VEZ 
+
+# last student
+
+-----
