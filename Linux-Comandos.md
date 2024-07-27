@@ -1119,3 +1119,86 @@ VER SI UN  USUARIO INGRESO ALGUNA VEZ
 # last student
 
 -----
+Ver los grupos a que se pertenece
+
+$ groups
+
+-----
+
+Ver detalladamente el usuario y grupos que se pertenece
+
+$ id
+
+-----
+muestra información más detallada acerca de un archivo, incluyendo el grupo propietario tanto por nombre de grupo como por el número GID
+
+$ stat /tmp/filetest1
+
+-----
+ cambiando la propiedad de grupo de un archivo que posee el usuario
+
+$ chgrp development /tmp/filetest1
+
+-----
+cambiar la propiedad de usuario del archivo abc.txt al usuario ted
+
+# chown ted abc.txt
+
+-----
+cambiar ambos el usuario y el grupo
+
+# chown user:group /path/to/file
+
+-----
+cambiar el grupo propietario de un archivo
+
+# chown :group /path/to/file
+
+-----
+
+El primer carácter indica el tipo de archivo.
+Los caracteres 2-4 indican los permisos para el usuario al que pertenece el archivo.
+Los caracteres 5-7 indican los permisos para el grupo al que pertenece el archivo.
+Los caracteres 8-10 indican los permisos para "otros" o lo que se conoce a veces como los permisos del mundo. Esto incluiría todos los usuarios que no sean el propietario del archivo o un miembro del grupo del archivo.
+
+u = cambiar los permisos del usuario propietario
+g = cambiar los permisos del grupo propietario
+o = cambiar los permisos de «otros»
+a = aplicar los cambios a todos los conjuntos de permisos (usuario propietario, grupo propietario y «otros»)
+
+----
+para conceder permiso de lectura al usuario propietario en un archivo denominado abc.txt
+
+# chmod u+r abc.txt
+
+-----
+considera el siguiente comando que agregará permisos de lectura para el usuario propietario y grupo propietario mientras quita el permiso de escritura para «otros»
+
+# chmod ug+r,o-w abc.txt
+
+-----
+establecer los permisos de un archivo llamado abc.txt a rwxr-xr--
+
+# chmod 754 abc.txt
+
+-----
+proporciona todos los permisos de ejecución
+
+chmod a+x file
+
+-----
+#elimina el permiso de escritura para los propietarios del grupo
+
+chmod g-w file
+
+-----
+#agrega permiso de lectura para el propietario del grupo y otros
+
+chmod go+r file
+
+-----
+#configura permisos de otros para leer, escribir y ejecutar
+
+chmod o=rwx
+
+-----
