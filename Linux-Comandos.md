@@ -1202,3 +1202,69 @@ chmod go+r file
 chmod o=rwx
 
 -----
+agregar el permiso setuid simbólicamente
+
+chmod u+s file
+
+----
+agregar el permiso setuid numéricamente, agrega 4000 a los permisos existentes del archivo (asume que el archivo tenía originalmente 775 para su permiso en el ejemplo siguiente)
+
+chmod 4775 file
+
+-----
+retirar el permiso setuid simbólicamente
+
+chmod u-s file
+
+----
+Retirar el permiso setuid numéricamente, resta 4000 de los permisos existentes del archivo
+
+chmod 0775 file
+
+-----
+permiso setgid simbólicamente
+
+chmod g+s <archivo|directorio>
+
+----
+agregar el permiso setgid numéricamente, añade 2000 a los permisos existentes del archivo (asume en el ejemplo siguiente de que el directorio tenía originalmente 775 para su permiso):
+
+chmod 2775 <archivo|directorio>
+
+----
+retirar el permiso setgid simbólicamente
+
+chmod g-s <archivo|directorio>
+
+----
+retirar el permiso setgid numéricamente, resta 2000 de los permisos existentes del archivo:
+
+chmod 0775 <archivo|directorio>
+
+-----
+establecer el permiso sticky bit simbólicamente
+
+chmod o+t <directorio>
+
+-----
+establecer el permiso sticky bit numéricamente, añade 1000 a los permisos existentes del directorio (asume que el directorio en el ejemplo siguiente tenía originalmente 775 para su permiso)
+
+chmod 1775 <archivo|directorio>
+
+-----
+retirar el permiso sticky bit simbólicamente
+
+chmod o-t <directorio>
+
+-----
+etirar el permiso sticky bit numéricamente, resta 1000 de los permisos existentes del directorio:
+
+chmod 0775 <directorio>
+
+----
+Mostrar el enlace
+
+$  ln -s /etc/passwd mypasswd
+$  ls -l mypasswd
+
+----
