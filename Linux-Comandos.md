@@ -1268,3 +1268,50 @@ $  ln -s /etc/passwd mypasswd
 $  ls -l mypasswd
 
 ----
+Lista los detalles de los directorios /tmp y /var/tmp
+
+ls -ld /tmp
+ls -ld /var/tmp
+
+-----
+Visualiza los permisos en el archivo /etc/shadow:
+
+$ ls -l /etc/shadow 
+
+----
+crear un vínculo físico. Visualiza los detalles e información del i-nodo del archivo de vínculo físico original y el nuevo
+
+ln source hardlink
+ls -li source hardlink
+
+-----
+crear un vínculo físico al archivo source. Visualiza los detalles e información del i-nodo del archivo de vínculo físico original y el nuevo
+
+ln hardlink hardtoo
+ls -li hardlink hardtoo source
+
+-----
+Retira el último vínculo que se creó y lista los archivos source y hardlink
+
+rm hardtoo
+ls -li source hardlink
+
+-----
+Elimina el archivo hardlink y lista los detalles del archivo source
+
+rm hardlink
+ls -li source
+
+-----
+Crea un vínculo simbólico al archivo source y ve los detalles de los dos archivos:
+
+ln -s source softlink
+ls -li source softlink
+
+-----
+Crea un enlace simbólico al directorio /proc y muestra el vínculo
+
+ln -s /proc crossdir
+ls -l crossdir
+
+-----
