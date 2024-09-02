@@ -9,3 +9,4 @@ Resumenes de multiples certificaciones
 
 -> Microsoft Certified: Azure Fundamentals  -  AZ-900  
    
+
